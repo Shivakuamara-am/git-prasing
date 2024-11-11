@@ -31,7 +31,7 @@ const App = () => {
         <Button title='Delete task'onPress={()=>Deletask(index)}/>
         </View>
      )}/>
-      <Text>App</Text>
+      <Text>App kl</Text>
     </View>
   )
 }
