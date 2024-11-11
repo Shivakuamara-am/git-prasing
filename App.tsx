@@ -19,7 +19,7 @@ const App = () => {
     <View style={styles.container}>
       <TextInput
       style={styles.input}
-      placeholder='Enter task kk'
+      placeholder='Enter task '
       value={task}
       onChangeText={setTask}/>
       <Button title='Add Task'onPress={addtask}/>
