@@ -28,10 +28,10 @@ const App = () => {
      keyExtractor={(item,index)=>index.toString()}
      renderItem={({item,index})=>(
       <View style={styles.taskItem}>
-        <Button title='Delete task'onPress={()=>Deletask(index)}/>
+        <Button title='Delete tkask'onPress={()=>Deletask(index)}/>
         </View>
      )}/>
-      <Text>App kl</Text>
+      <Text>App klgigt</Text>
     </View>
   )
 }
