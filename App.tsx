@@ -19,7 +19,7 @@ const App = () => {
     <View style={styles.container}>
       <TextInput
       style={styles.input}
-      placeholder='Enter task'
+      placeholder='Enter task kk'
       value={task}
       onChangeText={setTask}/>
       <Button title='Add Task'onPress={addtask}/>
@@ -28,7 +28,7 @@ const App = () => {
      keyExtractor={(item,index)=>index.toString()}
      renderItem={({item,index})=>(
       <View style={styles.taskItem}>
-        <Button title='Delete tkask'onPress={()=>Deletask(index)}/>
+        <Button title='Delete tkggitask'onPress={()=>Deletask(index)}/>
         </View>
      )}/>
       <Text>App klgigt</Text>
