@@ -7,7 +7,7 @@ const App = () => {
 
 
   const question=[
-    {question:"what is 2+2",option:['3','4','5'],correctAnswer:"4"},
+    {question:"what is 2+2",option:['3','4','9'],correctAnswer:"4"},
     {question:"what is 5+3",option:['7','8','9'],correctAnswer:'6'},
     {question:"what is 10-6",option:["5",'4','7'],correctAnswer:"4"}
   ]
