@@ -1,19 +1,34 @@
-import { StyleSheet, Text, View,Button} from 'react-native'
+
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 
 const App = () => {
- const[count,setCount]=useState(0)
- 
- const incrimnet=()=>{setCount(count+1)}
- const decrimnent=()=>{setCount(count-1)}
- const reset=()=>{setCount(0)}
+  const[currentcardindex,setCardCardInedex]=useState(0)
+  const[showAnswer,setShowAnswer]=useState(false)
+
+  const flashcard=[
+    {question:"what is jsx",answer:"comibindation html and javscript",},
+    {question:"what is DOM",answer:"Dom(Document objcet model)",},
+    {question:"who is donald trump",answer:"donald trump is prsident of USA",},
+  ]
+
+  const nextcard=()=>{
+    setShowAnswer(false)
+    setCardCardInedex((Previndex)=>(Previndex+1)%flashcard.length)
+  }
+
 
   return (
     <View style={styles.container}>
-      <Text style={styles.countext}>{count}</Text>
-      <Button onPress={incrimnet} title='incrimnet'/>
-      <Button onPress={decrimnent}title='decriment'/>
-      <Button onPress={reset}title='reset'/>
+      <Text style={styles.questionText}>{flashcard[currentcardindex].question}</Text>
+      {showAnswer &&<Text>{flashcard[currentcardindex].question}</Text>}
+      <TouchableOpacity onPress={()=>setShowAnswer(!showAnswer)} style={styles.button}>
+        <Text style={styles.buttonText}>{showAnswer ?"hideanswer":"showanswer"}</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={nextcard} style={styles.button}>
+        <Text style={styles.buttonText}>Next card</Text>
+      </TouchableOpacity>
+
     </View>
   )
 }
@@ -21,17 +36,29 @@ const App = () => {
 export default App
 
 const styles = StyleSheet.create({
-  
-  container:{
-    flex:1,
-    justifyContent:"center",
-    textAlign:"center",
-  },
-  countext:{
-    textAlign:"center",
-    fontSize:50,
-    color:"red"
+  container:
+   { flex: 1, 
+    justifyContent: 'center',
+     alignItems: 'center', 
+     padding: 20
+     },
+  questionText: {
+     fontSize: 24,
+      marginBottom: 20
+     },
 
-  },
-
+  answerText: { fontSize: 20,
+     marginBottom: 20, 
+     color: 'green'
+     },
+  button: { 
+    backgroundColor: '#4CAF50', 
+    padding: 10,
+     marginTop: 20, 
+     borderRadius: 5 
+    },
+  buttonText: { 
+    color: '#fff',
+     fontSize: 18 
+    },
 })
